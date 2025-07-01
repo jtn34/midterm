@@ -38,4 +38,10 @@ def main():
         sys.exit(1)
 
 if __name__ == "__main__":
+    main()
+
+if __name__ == "__main__":
     App.start()
+
+if __name__ == "__main__":
+    app = App().start()  # Instantiate an instance of App
