@@ -3,6 +3,10 @@ from decimal import Decimal, InvalidOperation
 from calculator import Calculator
 from app import App
 
+if __name__ == "__main__":
+    app = App()
+    app.start()
+
 def calculate_and_print(c, d, operation_name):
     operation_mappings = {
         'add': Calculator.add,
@@ -36,12 +40,3 @@ def main():
         print("  - REPL mode: python main.py")
         print("  - CLI mode : python main.py <number1> <number2> <operation>")
         sys.exit(1)
-
-if __name__ == "__main__":
-    main()
-
-if __name__ == "__main__":
-    App.start()
-
-if __name__ == "__main__":
-    app = App().start()  # Instantiate an instance of App

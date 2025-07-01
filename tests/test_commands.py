@@ -1,5 +1,8 @@
 import pytest
 from app import App
+from app.commands.greet.greet import GreetCommand
+from app.commands.goodbye.goodbye import GoodbyeCommand
+
 
 def test_greet_command(capfd):
     command = GreetCommand()
