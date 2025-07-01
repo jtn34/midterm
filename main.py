@@ -40,3 +40,6 @@ def main():
         print("  - REPL mode: python main.py")
         print("  - CLI mode : python main.py <number1> <number2> <operation>")
         sys.exit(1)
+
+if __name__ == "__main__":
+    main()

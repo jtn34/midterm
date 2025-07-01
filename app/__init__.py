@@ -11,6 +11,7 @@ from app.plugins.subtract.subtract import SubtractCommand
 from app.plugins.multiply.multiply import MultiplyCommand
 from app.plugins.divide.divide import DivideCommand
 
+from app.commands.handler import CommandHandler
 
 class App:
     def __init__(self):  # Constructor
