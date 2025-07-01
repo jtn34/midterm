@@ -2,17 +2,38 @@
 
 ## Project Overview
 
-This midterm requires the development of an advanced Python-based calculator application. Designed to underscore the importance of professional software development practices, the application integrates clean, maintainable code, the application of design patterns, comprehensive logging, dynamic configuration via environment variables, sophisticated data handling with Pandas, and a command-line interface (REPL) for real-time user interaction.
+This project is a modular command-line calculator application built in Python, designed around key software engineering principles such as extensibility, maintainability, and scalability. The application features a robust REPL (Read-Eval-Print Loop) interface, a dynamic plugin system, calculation history management with Pandas, and comprehensive logging and configuration capabilities. It leverages multiple design patterns to ensure clean architecture and code reuse.
 
-## Project Submission
+## Core Functionalities
+REPL Interface: Users interact with the calculator in real-time, executing arithmetic commands like add, subtract, multiply, and divide. Users can also invoke history and plugin-related commands directly from the REPL.
 
-- Create a NEW repository from scratch and transfer any relevant work as you complete the assignment, **you need to show a clear history of work through your commits, or your project could be given as low as a 0 for not showing your work.**
-- Submit through a GitHub repository link containing the necessary documentation, configuration examples, and a coherent commit history.
-- You are required to write a short description and link to your implememtation of the design patterns you use.
-- You need to provide a description of how you used environment variables and link to your code to illustrate.
--  You need to explain and link to how you are using logging.
--  You need to link to and explain how you are using try/catch / exceptions to illustrate  "Look Before You Leap" (LBYL) and "Easier to Ask for Forgiveness than Permission" (EAFP)/
-- Create a 3-5 minute video demonstration of using the calculator, highlighting its key features and functionalities. Link the video to the repository readme.
--  Submit a link to your repository to Canvas.  
--  Keep your repository private while working on it, so people don't copy your work.  Make the repository public within a day of the project being due, so we can grade it.
-- **REQUIRED - YOU MUST USE GITHUB ACTIONS AND YOUR CODE MUST PASS ALL THE TESTS ON GITHUB**
+Plugin System: New commands are seamlessly integrated using a dynamic plugin loader. This enables modular development without altering core code. The menu command lists all available plugins dynamically.
+
+Calculation History (via Pandas): All operations are stored in a CSV-backed history system. Users can view, load, clear, and delete historical calculation records through REPL commands.
+
+Logging (with ENV Configuration): All activities (commands run, errors, file operations) are logged with severity levels (INFO, WARNING, ERROR). Log level and file path are set dynamically via environment variables (LOG_LEVEL, LOG_FILE).
+
+Environment Variables: Used for configuring logging behavior and file paths, promoting flexibility and production-readiness.
+
+## Design Patterns Used
+Command Pattern: Each command (e.g., AddCommand, HistoryCommand) inherits from a base Command class, encapsulating execution logic and maintaining a clean REPL command structure.
+
+Factory Method Pattern: The CommandFactory dynamically registers and instantiates commands based on user input and available plugin modules.
+
+Facade Pattern: HistoryManager abstracts away complex Pandas operations, providing a simplified interface for file and data management.
+
+Singleton Pattern: The logger configuration behaves like a singleton, ensuring consistent logging behavior across the application.
+
+Strategy Pattern: Can be optionally applied to implement different calculation strategies or logging behaviors depending on future requirements.
+
+## Testing, Logging, and Standards
+Test Coverage: The project is tested using Pytest with a minimum of 90% coverage, validating arithmetic operations, plugin loading, and history management.
+
+Code Quality: Enforced through Pylint to meet PEP8 standards. Clean and readable code structure is maintained throughout.
+
+Logging Practices: Logging is applied across command execution, plugin loading, and error handling. This ensures observability and easier debugging.
+
+LBYL vs EAFP: Exception handling throughout the code follows Pythonic principles. For instance, file access and plugin loading employ EAFP to gracefully handle missing files or imports, while LBYL is used to check the existence of the history file before reading.
+
+## Final Statement
+Project has issues with commands. Tried everything even running through ChatGPT but had no luck. Came to the conclusion that the code kept looping itself, and can't find certain files even though using LS and double checked my code path is visibilty coded correct (to my knowledge). Feel pretty stump so I am submitting my project as is.
