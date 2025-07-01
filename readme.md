@@ -36,4 +36,9 @@ Logging Practices: Logging is applied across command execution, plugin loading, 
 LBYL vs EAFP: Exception handling throughout the code follows Pythonic principles. For instance, file access and plugin loading employ EAFP to gracefully handle missing files or imports, while LBYL is used to check the existence of the history file before reading.
 
 ## Final Statement
-Project has issues with commands. Tried everything even running through ChatGPT but had no luck. Came to the conclusion that the code kept looping itself, and can't find certain files even though using LS and double checked my code path is visibilty coded correct (to my knowledge). Feel pretty stump so I am submitting my project as is.
+Was stuck on commands for almost two hours, finally resolved everthing and the calaculator can operate and complete functions.
+## 📽️ Demo Video
+
+Watch the full demonstration here: [Calculator Demo Video](https://drive.google.com/file/d/11ShVReSW9mzxVcrC2Uoj_cN_66kc8TuA/view?usp=sharing)
+
+<img src="https://drive.google.com/file/d/11ShVReSW9mzxVcrC2Uoj_cN_66kc8TuA/view?usp=sharing" width="500" />
