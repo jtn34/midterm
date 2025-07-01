@@ -1,8 +1,6 @@
 from app.commands import CommandHandler
 from app.commands.discord.discord import DiscordCommand
 from app.commands.exit.exit import ExitCommand
-from app.commands.goodbye import GoodbyeCommand
-from app.commands.greet.greet import GreetCommand
 from app.commands.menu.menu import MenuCommand
 
 class App:

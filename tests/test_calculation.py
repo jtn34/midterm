@@ -7,7 +7,7 @@ from calculator.operations import add, subtract, multiply, divide
 # with different sets of arguments. Here, it's used to test various scenarios of arithmetic operations
 # with both integer and decimal operands to ensure the operations work correctly under different conditions.
 
-@pytest.mark.parametrize("a, b, operation, expected", [
+@pytest.mark.parametrize("x, y, operation, expected", [
     (Decimal('10'), Decimal('5'), add, Decimal('15')),  # Test addition
     (Decimal('10'), Decimal('5'), subtract, Decimal('5')),  # Test subtraction
     (Decimal('10'), Decimal('5'), multiply, Decimal('50')),  # Test multiplication
@@ -18,7 +18,7 @@ from calculator.operations import add, subtract, multiply, divide
     (Decimal('10'), Decimal('0.5'), divide, Decimal('20')),  # Test division with decimals
 ])
 
-def test_calculation_operations(a, b, operation, expected):
+def test_calculation_operations(x, y, operation, expected):
     """
     Test calculation operations with various scenarios.
     
@@ -32,8 +32,8 @@ def test_calculation_operations(a, b, operation, expected):
         operation (function): The arithmetic operation to perform.
         expected (Decimal): The expected result of the operation.
     """
-    calc = Calculation(a, b, operation)  # Create a Calculation instance with the provided operands and operation.
-    assert calc.perform() == expected, f"Failed {operation.__name__} operation with {a} and {b}"  # Perform the operation and assert that the result matches the expected value.
+    calc = Calculation(x, y, operation)  # Create a Calculation instance with the provided operands and operation.
+    assert calc.perform() == expected, f"Failed {operation.__name__} operation with {x} and {y}"  # Perform the operation and assert that the result matches the expected value.
 
 def test_calculation_repr():
     """
